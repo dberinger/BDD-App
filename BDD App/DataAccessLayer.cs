@@ -21,7 +21,7 @@ namespace BDD_App
             return ds;
         }
         public void queryExecution(SqlCommand sqlcmd)
-        {
+        {            
             sqlcmd.Connection = conn;
             conn.Open();
             sqlcmd.ExecuteNonQuery();

@@ -24,8 +24,8 @@ namespace BDD_App
         }
         public void insertStudents()
         {
-            string sqlQuery = "INSERT INTO Students VALUES(@name, @last_name, @student_no);";
-            SqlCommand sqlcmd = new SqlCommand(sqlQuery);
+            SqlCommand sqlcmd = new SqlCommand("InsertRecord");
+            sqlcmd.CommandType = CommandType.StoredProcedure;
             sqlcmd.Parameters.AddWithValue("@name", name);
             sqlcmd.Parameters.AddWithValue("@last_name", last_name);
             sqlcmd.Parameters.AddWithValue("@student_no", student_no);
