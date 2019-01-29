@@ -12,6 +12,7 @@ namespace BDD_App
         BusinessLayer bl = new BusinessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbl.Text = "Database status: Ready";
             refresh_GridView(GridView1);
         }
         protected void refresh_GridView(GridView grv)

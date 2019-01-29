@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*     border: 1px solid red; */
+    max-width: 100%;
 }
 
 body {
@@ -22,6 +22,12 @@ table {
     border: none;
 }
 
+/* HEADING */
+header {
+    width: 300px;
+    margin: 1em auto;
+}
+
 /*  GRID VIEW   */
 #studsTbl div {
     overflow-x: auto;
@@ -34,6 +40,7 @@ table {
 
 #GridView1 {
     width: 100%;
+    font-size: 0.75rem;
 }
 
     #GridView1 td {
@@ -57,17 +64,79 @@ table {
     }
 
 /*  MESSAGE LABEL   */
-#lbl {
-    font-size: small;
-    padding: 1em;
-    font-weight: bold;
+.alert {
+    max-width: 300px;
+    margin: 1em auto;
+    padding: 0.5em;
     border: 1px solid #3a3a3a;
     border-radius: 10px;
     background-color: rgba(255, 216, 0, 0.31);
 }
 
-/*  INPUT TABLE  */
-#inputTbl {
+#lbl {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/*  INPUTS  */
+#flex-container {
+    max-width: 400px;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputCombo {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    text-align: left;
+}
+
+    .inputCombo .lbl {
+        width: 100px;
+    }
+
+    .inputCombo input {
+        padding: 0.5em;
+        border: 1px solid #042964;
+        border-radius: 10px;
+    }
+
+.message {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    text-align: left;
+    width: 200px;
+}
+
+    .message span {
+        color: #ff0000;
+        padding-left: 0.5em;
+        width: 200px;
+        font-style: italic;
+    }
+
+/* OPERATION BUTTONS */
+#buttons {
     margin: 2em;
-    background-color: lightblue;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.btn input {
+    margin: 0.5em;
+    padding: 0.75em;
+    width: 80px;
+    border: 1px solid #042964;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #042964;
 }
