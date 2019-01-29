@@ -22,16 +22,16 @@ namespace BDD_App
         }
         public string queryExecution(SqlCommand sqlcmd)
         {
-            string message;
+            string message; //will be returned to a label in the WebForm
             sqlcmd.Connection = conn;
             conn.Open();
             sqlcmd.CommandType = CommandType.StoredProcedure;
-            sqlcmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
-            sqlcmd.Parameters["@msg"].Direction = ParameterDirection.Output;
+            sqlcmd.Parameters.Add("@msg", SqlDbType.VarChar, 100); //@msg is common for all stored procedures
+            sqlcmd.Parameters["@msg"].Direction = ParameterDirection.Output;    //@msg is the output parameter in all stored procedures
             sqlcmd.ExecuteNonQuery();
             message = (string)sqlcmd.Parameters["@msg"].Value;
             conn.Close();
-            return message;
+            return message; //will return message to business layer
         }
     }
 }

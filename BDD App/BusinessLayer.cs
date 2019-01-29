@@ -24,26 +24,26 @@ namespace BDD_App
         }
         public string insertStudents()
         {
-            SqlCommand sqlcmd = new SqlCommand("InsertRecord");
+            SqlCommand sqlcmd = new SqlCommand("InsertRecord"); //arg is a stored procedure
             sqlcmd.Parameters.AddWithValue("@name", name);
             sqlcmd.Parameters.AddWithValue("@last_name", last_name);
             sqlcmd.Parameters.AddWithValue("@student_no", student_no);
-            return dal.queryExecution(sqlcmd);
+            return dal.queryExecution(sqlcmd);  //returns message variable
         }
         public string updateStudents()
         {
-            SqlCommand sqlcmd = new SqlCommand("UpdateRecord");
+            SqlCommand sqlcmd = new SqlCommand("UpdateRecord"); //arg is a stored procedure
             sqlcmd.Parameters.AddWithValue("@id_student", id_student);
             sqlcmd.Parameters.AddWithValue("@name", name);
             sqlcmd.Parameters.AddWithValue("@last_name", last_name);
             sqlcmd.Parameters.AddWithValue("@student_no", student_no);
-            return dal.queryExecution(sqlcmd);
+            return dal.queryExecution(sqlcmd); //returns message variable
         }
         public string deleteStudent()
         {
-            SqlCommand sqlcmd = new SqlCommand("DeleteRecord");
+            SqlCommand sqlcmd = new SqlCommand("DeleteRecord"); //arg is a stored procedure
             sqlcmd.Parameters.AddWithValue("@id_student", id_student);
-            return dal.queryExecution(sqlcmd);
+            return dal.queryExecution(sqlcmd); //returns message variable
         }
     }
 }

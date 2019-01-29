@@ -12,14 +12,17 @@ namespace BDD_App
         BusinessLayer bl = new BusinessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbl.Text = "Database status: Ready";
+            lbl.Text = "Database status: Ready"; //fake text
             refresh_GridView(GridView1);
         }
+        //  GRIDVIEW REFRESH
         protected void refresh_GridView(GridView grv)
         {
             grv.DataSource = bl.selectStudents();
             grv.DataBind();
+            lbl.Text = "Database status: Ready"; //fake text
         }
+        //  TEXTBOXES CLEANER
         protected void cleanAllTextBoxes(Control parent)
         {
             foreach (Control x in parent.Controls)
@@ -34,6 +37,7 @@ namespace BDD_App
                 }
             }
         }
+        //  INSERT
         protected void btnInsert_Click1(object sender, EventArgs e)
         {
             bl.name = txtBoxName.Text;
@@ -43,7 +47,7 @@ namespace BDD_App
             refresh_GridView(GridView1);
             cleanAllTextBoxes(this);
         }
-
+        //  UPDATE
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             Page.Validate(((Button)sender).ValidationGroup);
@@ -58,7 +62,7 @@ namespace BDD_App
                 cleanAllTextBoxes(this);
             }
         }
-
+        //  DELETE
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             bl.id_student = Convert.ToInt32(txtBoxID.Text);
