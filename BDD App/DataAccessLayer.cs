@@ -20,12 +20,18 @@ namespace BDD_App
             sda.Fill(ds);
             return ds;
         }
-        public void queryExecution(SqlCommand sqlcmd)
-        {            
+        public string queryExecution(SqlCommand sqlcmd)
+        {
+            string message;
             sqlcmd.Connection = conn;
             conn.Open();
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+            sqlcmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
+            sqlcmd.Parameters["@msg"].Direction = ParameterDirection.Output;
             sqlcmd.ExecuteNonQuery();
+            message = (string)sqlcmd.Parameters["@msg"].Value;
             conn.Close();
+            return message;
         }
     }
 }

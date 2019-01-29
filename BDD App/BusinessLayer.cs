@@ -22,32 +22,28 @@ namespace BDD_App
             sqlcmd.CommandText = sqlQuery;
             return dal.displayData(sqlcmd);
         }
-        public void insertStudents()
+        public string insertStudents()
         {
             SqlCommand sqlcmd = new SqlCommand("InsertRecord");
-            sqlcmd.CommandType = CommandType.StoredProcedure;
             sqlcmd.Parameters.AddWithValue("@name", name);
             sqlcmd.Parameters.AddWithValue("@last_name", last_name);
             sqlcmd.Parameters.AddWithValue("@student_no", student_no);
-            dal.queryExecution(sqlcmd);
+            return dal.queryExecution(sqlcmd);
         }
-        public void updateStudents()
+        public string updateStudents()
         {
-            string sqlQuery =
-            "UPDATE Students SET FirstName = @name, LastName = @last_name, StudentNo = @student_no WHERE Id_student = @id_student;";
-            SqlCommand sqlcmd = new SqlCommand(sqlQuery);
+            SqlCommand sqlcmd = new SqlCommand("DeleteRecord");
             sqlcmd.Parameters.AddWithValue("@id_student", id_student);
             sqlcmd.Parameters.AddWithValue("@name", name);
             sqlcmd.Parameters.AddWithValue("@last_name", last_name);
             sqlcmd.Parameters.AddWithValue("@student_no", student_no);
-            dal.queryExecution(sqlcmd);
+            return dal.queryExecution(sqlcmd);
         }
-        public void deleteStudent()
+        public string deleteStudent()
         {
-            string sqlQuery = "DELETE FROM Students WHERE Id_student = @id_student;";
-            SqlCommand sqlcmd = new SqlCommand(sqlQuery);
+            SqlCommand sqlcmd = new SqlCommand("DeleteRecord");
             sqlcmd.Parameters.AddWithValue("@id_student", id_student);
-            dal.queryExecution(sqlcmd);
+            return dal.queryExecution(sqlcmd);
         }
     }
 }

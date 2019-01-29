@@ -38,7 +38,7 @@ namespace BDD_App
             bl.name = txtBoxName.Text;
             bl.last_name = txtBoxLastName.Text;
             bl.student_no = Convert.ToInt32(txtBoxStudentNo.Text);
-            bl.insertStudents();
+            lbl.Text = bl.insertStudents();
             refresh_GridView(GridView1);
             cleanAllTextBoxes(this);
         }
@@ -49,7 +49,7 @@ namespace BDD_App
             bl.name = txtBoxName.Text;
             bl.last_name = txtBoxLastName.Text;
             bl.student_no = Convert.ToInt32(txtBoxStudentNo.Text);
-            bl.updateStudents();
+            lbl.Text = bl.updateStudents();
             refresh_GridView(GridView1);
             cleanAllTextBoxes(this);
         }
@@ -57,7 +57,7 @@ namespace BDD_App
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             bl.id_student = Convert.ToInt32(txtBoxID.Text);
-            bl.deleteStudent();
+            lbl.Text = bl.deleteStudent();
             refresh_GridView(GridView1);
             cleanAllTextBoxes(this);
         }        
