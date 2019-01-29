@@ -1,2 +1,73 @@
-﻿body {
+﻿/*  GENERAL STYLING - MOBILE FIRST  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*     border: 1px solid red; */
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #3a3a3a;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#form1 {
+    text-align: center;
+    width: 100%;
+}
+
+table {
+    border: none;
+}
+
+/*  GRID VIEW   */
+#studsTbl div {
+    overflow-x: auto;
+    width: 403px;
+    margin: 1em auto;
+    border: 1px solid #042964;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#GridView1 {
+    width: 100%;
+}
+
+    #GridView1 td {
+        border: none;
+        padding: 0.2em;
+        text-align: center;
+    }
+
+    #GridView1 th {
+        padding: 0.5em;
+        font-weight: bold;
+        border: none;
+        color: #042964;
+        border-bottom: 3px solid #042964;
+        background-color: #fff;
+    }
+
+    #GridView1 tr:hover {
+        font-weight: bold;
+        background-color: #0429641c;
+    }
+
+/*  MESSAGE LABEL   */
+#lbl {
+    font-size: small;
+    padding: 1em;
+    font-weight: bold;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+    background-color: rgba(255, 216, 0, 0.31);
+}
+
+/*  INPUT TABLE  */
+#inputTbl {
+    margin: 2em;
+    background-color: lightblue;
 }
