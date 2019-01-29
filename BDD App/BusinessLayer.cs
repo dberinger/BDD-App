@@ -32,7 +32,7 @@ namespace BDD_App
         }
         public string updateStudents()
         {
-            SqlCommand sqlcmd = new SqlCommand("DeleteRecord");
+            SqlCommand sqlcmd = new SqlCommand("UpdateRecord");
             sqlcmd.Parameters.AddWithValue("@id_student", id_student);
             sqlcmd.Parameters.AddWithValue("@name", name);
             sqlcmd.Parameters.AddWithValue("@last_name", last_name);

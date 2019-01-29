@@ -45,13 +45,17 @@ namespace BDD_App
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            Page.Validate(((Button)sender).ValidationGroup);
             bl.id_student = Convert.ToInt32(txtBoxID.Text);
             bl.name = txtBoxName.Text;
             bl.last_name = txtBoxLastName.Text;
             bl.student_no = Convert.ToInt32(txtBoxStudentNo.Text);
-            lbl.Text = bl.updateStudents();
-            refresh_GridView(GridView1);
-            cleanAllTextBoxes(this);
+            if (Page.IsValid)
+            {
+                lbl.Text = bl.updateStudents();
+                refresh_GridView(GridView1);
+                cleanAllTextBoxes(this);
+            }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
