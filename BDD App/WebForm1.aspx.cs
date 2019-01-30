@@ -12,7 +12,7 @@ namespace BDD_App
         BusinessLayer bl = new BusinessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbl.Text = "Database status: Ready"; //fake text
+            lbl.Text = "Database status: Ready";
             refresh_GridView(GridView1);
         }
         //  GRIDVIEW REFRESH
@@ -20,7 +20,6 @@ namespace BDD_App
         {
             grv.DataSource = bl.selectStudents();
             grv.DataBind();
-            lbl.Text = "Database status: Ready"; //fake text
         }
         //  TEXTBOXES CLEANER
         protected void cleanAllTextBoxes(Control parent)
@@ -68,7 +67,7 @@ namespace BDD_App
             bl.id_student = Convert.ToInt32(txtBoxID.Text);
             lbl.Text = bl.deleteStudent();
             refresh_GridView(GridView1);
-            cleanAllTextBoxes(this);
+            cleanAllTextBoxes(this);            
         }        
     }
 }

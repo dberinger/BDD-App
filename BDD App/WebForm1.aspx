@@ -37,7 +37,7 @@
                     <div class="lbl">
                         <label for="txtBoxID">Student ID</label>
                     </div>
-                    <asp:TextBox ID="txtBoxID" runat="server" MaxLength="6"></asp:TextBox>
+                    <asp:TextBox ID="txtBoxID" runat="server" MaxLength="3"></asp:TextBox>
                 </div>
                 <div class="message">
                     <asp:RangeValidator ID="idRange" runat="server" ControlToValidate="txtBoxID" ErrorMessage="Enter a valid ID between 1 and 999" MaximumValue="999" MinimumValue="1" Type="Integer" ValidationGroup="Update"></asp:RangeValidator>
